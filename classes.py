@@ -13,7 +13,7 @@ class UnitClass:
     skill: Skill
 
 
-WarriorClass =  UnitClass(
+WarriorClass = UnitClass(
     name="Воин",
     max_health=60.0,
     max_stamina=30.0,
@@ -24,17 +24,16 @@ WarriorClass =  UnitClass(
 )
 
 ThiefClass = UnitClass(
-name="Вор",
-max_health=50.0,
-max_stamina=25.0,
-attack=1.5,
-stamina=1.2,
-armor=1.0,
-skill=HardShot()
+    name="Вор",
+    max_health=50.0,
+    max_stamina=25.0,
+    attack=1.5,
+    stamina=1.2,
+    armor=1.0,
+    skill=HardShot()
 )
 
 unit_classes = {
     ThiefClass.name: ThiefClass,
     WarriorClass.name: WarriorClass
 }
-
