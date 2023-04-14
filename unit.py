@@ -75,9 +75,8 @@ class BaseUnit(ABC):
         проверяет достаточно ли выносливасти у атакующего
         :return: bool
         """
-        if self.stamina > self.weapon.stamina_per_hit:
-            return 'True'
-        return 'False'
+        return self.stamina > self.weapon.stamina_per_hit
+
 
 
     def _get_unit_damage_with_weapons(self) -> float:
@@ -93,6 +92,8 @@ class BaseUnit(ABC):
         :return:None
         """
         self.stamina -= self.weapon.stamina_per_hit
+        if self.stamina < 0:
+            self.stamina =0
 
     def _checking_stamina_target(self, target: BaseUnit) -> bool:
         """
@@ -186,7 +187,7 @@ class EnemyUnit(BaseUnit):
         функция _count_damage(target
         """
         if not self._is_skill_used and randint(0, 1):
-            return self.unit_class.skill.use(user=self, target=target)
+                return self.use_skill(target=target)
 
         damage = self._count_damage(target)
         if not damage:
