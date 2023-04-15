@@ -2,8 +2,6 @@ version: "3.9"
 
 services:
   api:
-    build:
-      context: .
-    image: mgostev/skypro_mgostev_app
+    image: mgostev/skypro_mgostev_app:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
       - 80:80
