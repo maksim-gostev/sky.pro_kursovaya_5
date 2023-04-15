@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+    image: mgostev/skypro_mgostev_app
+    ports:
+      - 80:80
