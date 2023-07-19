@@ -11,7 +11,6 @@
 - [Flask](https://flask.palletsprojects.com/en/2.3.x/)
 - [Docker](https://www.docker.com/)
 - ОПП
-- 
 
 
 ### Функционал
